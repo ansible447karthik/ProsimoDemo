@@ -1,0 +1,7 @@
+---
+- name: Ping Dev EU West Machines
+  hosts: dev_eu_west
+  gather_facts: no
+  tasks:
+    - name: Ping the hosts
+      ping:
