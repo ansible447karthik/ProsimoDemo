@@ -1,0 +1,13 @@
+---
+- name: Tag EC2 instances
+  hosts: dev_eu_west
+  gather_facts: no
+  tasks:
+    - name: Add tag to EC2 instances
+      amazon.aws.ec2_tag:
+        resource: "{{ item }}"
+        state: present
+        tags:
+          taggingDone: AnsibleTower
+      loop: "{{ groups['dev_eu_west'] }}"
+      delegate_to: localhost
