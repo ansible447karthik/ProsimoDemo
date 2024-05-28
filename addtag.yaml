@@ -21,7 +21,7 @@
 
     - name: Ensure Ansible Tower has access to SSH private key
       copy:
-        src: /home/ec2-user/terraform-aws/ EU_WEST_WebSvcsDev.pem
+        src: /home/ec2-user/terraform-aws/EU_WEST_WebSvcsDev.pem
         dest: /home/ansible/.ssh/key.pem
         mode: 0600
         owner: ansible
