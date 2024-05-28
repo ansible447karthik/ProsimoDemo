@@ -1,7 +1,11 @@
----
-- name: Ping Dev EU West Machines
-  hosts: dev_eu_west
-  gather_facts: no
-  tasks:
-    - name: Ping the hosts
-      ping:
+plugin: aws_ec2
+regions:
+  - eu-west-1
+filters:
+  tag:ManagedBy: Ansible
+hostnames:
+  - public-ip-address
+keyed_groups:
+  - key: tags.Name
+    prefix: 'instance_'
+    separator: ''
