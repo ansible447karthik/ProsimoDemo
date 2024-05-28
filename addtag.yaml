@@ -1,6 +1,6 @@
 ---
 - name: Add a tag to EC2 instances with the ManagedBy=Ansible tag
-  hosts: localhost
+  #hosts: localhost
   gather_facts: false
   tasks:
     - name: Find instances with the ManagedBy=Ansible tag
